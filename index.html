@@ -5,38 +5,42 @@
     <body>
     <div ng-app="app" ng-controller="Ctrl">
 
-			<div id="example-2-3" ng-model="template" sortable>
+		<div id="example-2-3" ng-model="template">
 
-				<div class="column left first">
+			<div droppable class="column left first">
 
-					<ul class="sortable-list" >
-						<li class="sortable-item" ng-repeat="templating in column1Array"><div ng-include src="templating.temp"></div></li>
-					</ul>
-
-				</div>
-
-				<div class="column left">
-
-					<ul class="sortable-list" >
-                        <li class="sortable-item" ng-repeat="templating in column2Array"><div ng-include src="templating.temp"></div></li>
-					</ul>
-
-				</div>
-
-				<div class="column left">
-
-					<ul class="sortable-list" >
-						<li class="sortable-item" ng-repeat="templating in column3Array"><div ng-include src="templating.temp"></div></li>
-					</ul>
-
-				</div>
+				<ul id="sortable1" class="sortable-list" sortable>
+					<li id="draggable" draggable class="sortable-item" ng-repeat="templating in column1Array">
+                        <div ng-include src="templating.temp"></div>
+                    </li>
+				</ul>
 
 			</div>
 
+			<div  droppable class="column left">
 
+				<ul id="sortable2" class="sortable-list" sortable>
+                    <li id="draggable" draggable class="sortable-item" ng-repeat="templating in column2Array">
+                        <div ng-include src="templating.temp"></div>
+                    </li>
+				</ul>
 
-   <!-- template1.html -->
-      <!--   <script type="text/ng-template" id="template1.html">
+			</div>
+
+			<div droppable class="column left">
+
+				<ul id="sortable3" class="sortable-list" sortable>
+					<li id="draggable" draggable class="sortable-item" ng-repeat="templating in column3Array">
+                        <div ng-include src="templating.temp"></div>
+                    </li>
+				</ul>
+
+			</div>
+
+		</div>
+
+        <!-- template1.html -->
+        <script type="text/ng-template" id="template1.html">
           Content of template1.html
         </script>
 
@@ -62,34 +66,9 @@
 
     </div>
 
-
-
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-
-    <script type="text/javascript">
-        angular.module('app', []).
-        controller('Ctrl', function($scope) {
-            $scope.column1Array = [{'temp':'template2.html'},{'temp':'template3.html'}];
-            $scope.column2Array = [{'temp':'template1.html'},{'temp':'template4.html'},{'temp':'template5.html'}];
-            $scope.column3Array = [];
-
-        }).
-        directive('sortable',function(){
-            return {
-                restrict:"A",
-                link: function (scope, element) {
-                    $(element).find('ul.sortable-list').sortable(function (e) {
-                        connectWith: '#example-2-3 .sortable-list'
-                    });
-                }
-            };
-        });
-
-
-
-    </script>
+    <script type="text/javascript" src="app.js"></script>
     </body>
 </html>

@@ -1,15 +1,48 @@
-/**
- * Created with JetBrains PhpStorm.
- * User: weboniselab
- * Date: 6/10/14
- * Time: 7:29 PM
- * To change this template use File | Settings | File Templates.
- */
+angular.module('app', []).
+        controller('Ctrl', function($scope) {
+            $scope.column1Array = [{'temp':'template2.html'},{'temp':'template3.html'}];
+            $scope.column2Array = [{'temp':'template1.html'},{'temp':'template4.html'},{'temp':'template5.html'}];
+            $scope.column3Array = [];
 
-var app = angular.module('app', []);
-app.directive('templatedir', function(){
-        return {
-            restrict:"E",
-            templateUrl:"/home/weboniselab/projects/php/apps2014/poc/template1.html"
-        }
-    });
+        }).
+        directive('sortable',function(){
+            return {
+                restrict:"A",
+                link: function (scope, element) {
+                    $(element).sortable({
+                        connectWith: '.sortable-list'
+                    });
+
+                }
+            };
+        }).
+        directive('draggable', function(){
+            return {
+                restrict:"A",
+                link: function(scope, element){
+                    $(element).draggable({
+                        revert: "valid",
+                        handle: "li",
+                        start: function(e, ui) {
+                            console.log("start");
+                        },
+                        drag: function(e, ui) {
+                            console.log("drag");
+                        },
+                        stop: function(e, ui) {
+                            console.log("stop");
+                        }
+                    });
+                }
+            }
+        }).
+        directive('droppable', function(){
+            return {
+                restrict:"A",
+                link: function(scope, element){
+                    $(element).droppable({
+                        accept: "#draggable"
+                    });
+                }
+            }
+        });
