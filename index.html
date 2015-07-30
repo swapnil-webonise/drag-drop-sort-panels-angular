@@ -1,74 +1,52 @@
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-</head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    </head>
     <body>
-    <div ng-app="app" ng-controller="Ctrl">
-
-		<div id="example-2-3" ng-model="template">
-
-			<div droppable class="column left first">
-
-				<ul id="sortable1" class="sortable-list" sortable>
-					<li id="draggable" draggable class="sortable-item" ng-repeat="templating in column1Array">
-                        <div ng-include src="templating.temp"></div>
-                    </li>
-				</ul>
-
-			</div>
-
-			<div  droppable class="column left">
-
-				<ul id="sortable2" class="sortable-list" sortable>
-                    <li id="draggable" draggable class="sortable-item" ng-repeat="templating in column2Array">
-                        <div ng-include src="templating.temp"></div>
-                    </li>
-				</ul>
-
-			</div>
-
-			<div droppable class="column left">
-
-				<ul id="sortable3" class="sortable-list" sortable>
-					<li id="draggable" draggable class="sortable-item" ng-repeat="templating in column3Array">
-                        <div ng-include src="templating.temp"></div>
-                    </li>
-				</ul>
-
-			</div>
-
-		</div>
-
-        <!-- template1.html -->
-        <script type="text/ng-template" id="template1.html">
-          Content of template1.html
-        </script>
-
-        <!-- template2.html -->
-        <script type="text/ng-template" id="template2.html">
-            <p ng-class="color">Content of template2.html</p>
-        </script>
-
-        <!-- template3.html -->
-        <script type="text/ng-template" id="template3.html">
-          Content of template3.html
-        </script>
-
-        <!-- template4.html -->
-        <script type="text/ng-template" id="template4.html">
-            <p ng-class="color">Content of template4.html</p>
-        </script>
-
-        <!-- template5.html -->
-        <script type="text/ng-template" id="template5.html">
-          Content of template5.html
-        </script>
-
-    </div>
-
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+        <div ng-app="app" ng-controller="Ctrl">
+            <div id="example-2-3" ng-model="template">
+                <div droppable class="column left first">
+                    <ul id="sortable1" class="sortable-list" sortable>
+                        <li id="draggable" draggable class="sortable-item" ng-repeat="templating in column1Array">
+                            <div ng-include src="templating.temp"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div  droppable class="column left">
+                    <ul id="sortable2" class="sortable-list" sortable>
+                        <li id="draggable" draggable class="sortable-item" ng-repeat="templating in column2Array">
+                            <div ng-include src="templating.temp"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div droppable class="column left">
+                    <ul id="sortable3" class="sortable-list" sortable>
+                        <li id="draggable" draggable class="sortable-item" ng-repeat="templating in column3Array">
+                            <div ng-include src="templating.temp"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- template2.html -->
+            <script type="text/ng-template" id="template2.html">
+                <p ng-class="color">Content of template2.html</p>
+            </script>
+            <!-- template3.html -->
+            <script type="text/ng-template" id="template3.html">
+                Content of template3.html
+            </script>
+            <!-- template4.html -->
+            <script type="text/ng-template" id="template4.html">
+                <p ng-class="color">Content of template4.html</p>
+            </script>
+            <!-- template5.html -->
+            <script type="text/ng-template" id="template5.html">
+                Content of template5.html
+            </script>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
     </body>
 </html>

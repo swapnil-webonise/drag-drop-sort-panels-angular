@@ -1,5 +1,5 @@
-angular_panels
-==============
+drag-drop-sort-panels-angular
+=============================
 
 Panels having draggable , droppable and sortable features.
 
